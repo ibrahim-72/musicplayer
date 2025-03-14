@@ -38,14 +38,14 @@ function secondsToMinutesSeconds(seconds) {
     songUL.innerHTML = ""
     for (const song of songs) {
         songUL.innerHTML = songUL.innerHTML + `<li>
-                                <img class="invert" src="/img/music.svg" alt="">
+                                <img class="invert" src="music.svg" alt="">
                                 <div class="info">
                                     <div>${song.replaceAll("%20", " ")}</div>
                                     <div>Song Artist</div>
                                 </div>
                                 <div class="playnow">
                                     <span>Play Now</span>
-                                    <img class="invert" src="/img/play.svg" alt="">
+                                    <img class="invert" src="play.svg" alt="">
                                 </div>
                             </li>`;
         }
@@ -67,7 +67,7 @@ const playMusic = (track, pause=false) => {
     currentSong.src = `/${currfolder}/` + track
     if(!pause) {
         currentSong.play()
-        play.src= "/img/pause.svg"
+        play.src= "pause.svg"
     }
     document.querySelector(".songinfo").innerHTML = decodeURI(track)
     document.querySelector(".songtime").innerHTML = "00:00 / 00:00"
@@ -136,11 +136,11 @@ async function main() {
     play.addEventListener("click", ()=> {
         if(currentSong.paused) {
             currentSong.play()
-            play.src = "/img/pause.svg"
+            play.src = "pause.svg"
         }
         else{
             currentSong.pause()
-            play.src = "/img/play.svg"
+            play.src = "play.svg"
         }
     })
 
